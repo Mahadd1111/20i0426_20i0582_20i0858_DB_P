@@ -1,0 +1,198 @@
+﻿body .form{
+   height:2000px;
+   background-color:blueviolet;
+}
+
+.form{
+    display:flex;
+    flex:1;
+    flex-direction:column;
+}
+
+.header{
+    display:flex;
+    flex:1;
+    height:600px;
+}
+
+.bck {
+    font-family:sans-serif;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("student_grad.jpg");
+    height: auto;
+    width: 100%;
+    background-size: 100% 100%;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .bck .txt{
+    width:50%;
+    display:flex;
+    flex:1;
+    justify-content:center;
+    align-items:center;
+    background-color:darkslateblue;
+}
+
+.options1{
+    display:flex;
+    flex:1;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    border:5px solid red;
+}
+
+.options1 .issuance {
+    background-image: url("school-5000781.svg");
+    background-repeat: no-repeat;
+    background-color:black;
+    width: 15%;
+    height: 40%;
+    border: 10px solid black;
+    margin:10px;
+}
+
+.options1 .tracking {
+    background-image: url("internet-42583.svg");
+    background-repeat: no-repeat;
+    background-color:navajowhite;
+    width: 15%;
+    height: 40%;
+    border: 10px solid black;
+    margin:10px;
+}
+
+.options1 .btn1{
+    margin:15px;
+    width:300px;
+    height:100px;
+    border:none;
+    border-radius:4px;
+    color:white;
+    background-color:rgb(255,0,68);
+    box-shadow:inset 0 0 0 0 blue;
+    transition:ease-out 0.3s;
+    font-size:2rem;
+    outline:none;
+}
+
+.options1 .btn1:hover {
+    box-shadow: inset 300px 0 0 0 blue;
+    cursor:pointer;
+    color:white;
+}
+
+.btn2{
+    margin:15px;
+    width: 300px;
+    height: 100px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background-color: darkblue;
+    box-shadow: inset 0 0 0 0 blue;
+    transition: ease-out 0.3s;
+    font-size: 2rem;
+    outline: none;
+    position:relative;
+    z-index:1;
+}
+
+.btn2:hover{
+    color:#fff;
+    cursor:pointer;
+}
+
+.btn2:before{
+    transition:0.5s all ease;
+    position:absolute;
+    top:0;
+    left:50%;
+    right:50%;
+    bottom:0;
+    opacity:0;
+    content:"";
+    background-color:#42fbf2;
+}
+
+.btn2:hover:before{
+    transition:0.5s all ease;
+    left: 0;
+    right:0;
+    opacity:1;
+    z-index:-1;
+}
+
+.options2 {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content:center;
+    align-items:center;
+    height:70%;
+    border: 5px solid red;
+}
+
+.options2 .complaint {
+    background-image: url("website-6700615.svg");
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 20%;
+    height: 40%;
+    margin:10px;
+    border:10px solid black;
+}
+
+.options2 .transcript {
+    background-image: url("accountant-1794122.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color:greenyellow;
+    width: 20%;
+    height: 40%;
+    margin: 10px;
+    border: 10px solid black;
+}
+
+.options2 .btn1 {
+    margin: 15px;
+    width: 300px;
+    height: 100px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background-color: green;
+    box-shadow: inset 0 0 0 0 green;
+    transition: ease-out 0.3s;
+    font-size: 2rem;
+    outline: none;
+}
+
+.options2 .btn1:hover {
+    box-shadow: inset 300px 0 0 0 rgb(255,0,68);
+    cursor: pointer;
+    color: white;
+}
+
+.options2 .btn2 {
+    margin: 15px;
+    width: 300px;
+    height: 100px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background-color:mediumspringgreen;
+    box-shadow: inset 0 0 0 0 mediumspringgreen;
+    transition: ease-in-out 0.3s;
+    font-size: 2rem;
+    outline: none;
+}
+
+.options2 .btn2:hover {
+    box-shadow: inset 300px 0 0 0 orange;
+    cursor: pointer;
+    color: white;
+}

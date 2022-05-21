@@ -125,6 +125,7 @@ form .txt{
     background:#2691d9;
 }
 
+
 .txt input:focus ~ label,
 .txt input:valid ~ label{
     top: -5px;
