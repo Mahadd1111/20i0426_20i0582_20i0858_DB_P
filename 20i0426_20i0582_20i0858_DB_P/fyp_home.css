@@ -1,0 +1,135 @@
+﻿body {
+    height:2000px;
+}
+
+.page{
+    width:100%;
+    height:2000px;
+    display:flex;
+    flex:1;
+    flex-direction:column;
+}
+
+.header{
+    height:25%;
+    width:100%;
+    background-image: url(fyp_banner.jpg);
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    color:papayawhip;
+    display:flex;
+    flex:1;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    font-family:sans-serif;
+}
+
+.header h1{
+    background-color:red;
+    padding:12px;
+}
+
+.info{
+    height:35%;
+    width:100%;
+    display:flex;
+    flex:1;
+    flex-direction:row;
+}
+
+.info .video{
+    width:50%;
+    background-color:crimson;
+    margin:30px;
+    display:flex;
+    flex:1;
+    justify-content:center;
+    align-items:center;
+}
+
+.info .txt {
+    border:2px solid black;
+    width: 50%;
+    margin: 30px;
+    color: darkred;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    font-size:80px;
+    word-wrap:break-word;
+    word-spacing:5px;
+    font-weight:bold;
+    background-color:coral;
+}
+
+.txt h3{
+    padding:50px;
+}
+
+.functionality{
+    height:40%;
+    width:100%;
+    display:flex;
+    flex:1;
+    flex-direction:row;
+    background-color:darkblue;
+    gap:50px;
+}
+
+.functionality .viewfyp{
+    background-color:aquamarine;
+    width:33%;
+    height:80%;
+    display:flex;
+    flex:1;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+    margin-left:40px;
+}
+
+.functionality .viewreq {
+    background-color: aquamarine;
+    width: 33%;
+    height: 80%;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+}
+
+.functionality .decision {
+    background-color: aquamarine;
+    width: 33%;
+    height: 80%;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    margin-right:40px;
+}
+
+.btn1 {
+    margin: 15px;
+    width: 300px;
+    height: 300px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background-color: rgb(255,0,68);
+    box-shadow: inset 0 0 0 0 blue;
+    transition: ease-in-out 0.3s;
+    font-size: 2rem;
+    outline: none;
+}
+
+.btn1:hover {
+    box-shadow: inset 300px 0 0 0 blue;
+    cursor: pointer;
+    color: white;
+}
