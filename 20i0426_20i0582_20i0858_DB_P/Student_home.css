@@ -45,25 +45,63 @@
     border:5px solid red;
 }
 
-.options1 .issuance {
-    background-image: url("school-5000781.svg");
+.options1 .issuance{
+    background-image: url("education.png");
+    background-size:100% 100%;
     background-repeat: no-repeat;
     background-color:black;
-    width: 15%;
-    height: 40%;
+    width: 20%;
+    height: 65%;
     border: 10px solid black;
     margin:10px;
 }
 
 .options1 .tracking {
-    background-image: url("internet-42583.svg");
+    background-image: url("tracking-app.png");
+    background-size:100% 100%;
     background-repeat: no-repeat;
     background-color:navajowhite;
-    width: 15%;
-    height: 40%;
+    width: 20%;
+    height: 65%;
     border: 10px solid black;
     margin:10px;
 }
+
+.options2 {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    border: 5px solid red;
+}
+
+.options2 .complaint {
+    background-image: url("complaint.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 20%;
+    height: 65%;
+    margin: 10px;
+    border: 10px solid black;
+}
+
+.complaint {
+    background-color: aqua;
+}
+
+.options2 .transcript {
+    background-image: url("document.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: greenyellow;
+    width: 20%;
+    height: 65%;
+    margin: 10px;
+    border: 10px solid black;
+}
+
 
 .options1 .btn1{
     margin:15px;
@@ -126,36 +164,6 @@
     z-index:-1;
 }
 
-.options2 {
-    display: flex;
-    flex: 1;
-    flex-direction: row;
-    justify-content:center;
-    align-items:center;
-    height:70%;
-    border: 5px solid red;
-}
-
-.options2 .complaint {
-    background-image: url("website-6700615.svg");
-    background-size:contain;
-    background-repeat: no-repeat;
-    width: 20%;
-    height: 40%;
-    margin:10px;
-    border:10px solid black;
-}
-
-.options2 .transcript {
-    background-image: url("accountant-1794122.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-color:greenyellow;
-    width: 20%;
-    height: 40%;
-    margin: 10px;
-    border: 10px solid black;
-}
 
 .options2 .btn1 {
     margin: 15px;
