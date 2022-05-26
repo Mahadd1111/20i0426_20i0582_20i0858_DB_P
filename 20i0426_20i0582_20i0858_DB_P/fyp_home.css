@@ -13,6 +13,27 @@
 .header{
     height:25%;
     width:100%;
+    display:flex;
+    flex:1;
+    flex-direction:row;
+}
+
+.part1{
+    width:40%;
+    font-family:Arial;
+    text-align:center;
+    font-size:48px;
+    background-color:red;
+    display:flex;
+    flex:1;
+    color:ghostwhite;
+    align-items:center;
+    justify-content:center;
+}
+
+.part2{
+    height:100%;
+    width:60%;
     background-image: url(fyp_banner.jpg);
     background-repeat:no-repeat;
     background-size:100% 100%;
@@ -28,6 +49,8 @@
 .header h1{
     background-color:red;
     padding:12px;
+    word-spacing:4px;
+    word-wrap:normal;
 }
 
 .info{

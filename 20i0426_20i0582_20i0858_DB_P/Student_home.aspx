@@ -11,8 +11,11 @@
     <form id="form1" runat="server">
         <div class="form">
             <div class="header">
-                <div class="bck">
+                <div class="top">
                     <div class="txt"><h1>Student Home Page</h1></div>
+                    <div class="bck">
+
+                    </div>
                 </div>
             </div>
             <div class="options1">

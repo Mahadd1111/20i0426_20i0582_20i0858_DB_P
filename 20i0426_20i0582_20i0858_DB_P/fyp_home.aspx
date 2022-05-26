@@ -11,7 +11,8 @@
     <form id="form1" runat="server">
         <div class="page">
             <div class="header">
-                <h1>FYP DEPARTMENT</h1>
+                <div class="part1"><h1>FYP DEPARTMENT</h1></div>
+                <div class="part2"></div>
             </div>
             <div class="info">
                 <div class="video">
