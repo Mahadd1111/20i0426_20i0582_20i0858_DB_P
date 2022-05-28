@@ -17,7 +17,7 @@ public partial class onestop_generate_token : System.Web.UI.Page
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-ABASTNN\\SQLEXPRESS;Initial Catalog=OneStop;Integrated Security=True;MultipleActiveResultSets=true");
         conn.Open();
         string req = textbox_req.Value;
-        string date = Request.Form["textbox_date"];
+        DateTime dt=DateTime.Now;
         if (RadioButton1.Checked == true)
         {
             //first see if this request exists in degree_issue_req table
@@ -27,8 +27,11 @@ public partial class onestop_generate_token : System.Web.UI.Page
             if (result > 0)
             {
                 //insert new request into pending request
-                string query2 = "insert into Pending_Degree_Req values(" + req + ",'" + date + "')";
+                //string query2 = "insert into Pending_Degree_Req values(" + req + ",CONVERT(datetime,'" + dt + "',103))";
+                string query2 = "insert into Pending_Degree_Req values(@request,CONVERT(datetime,@dat,103))";
                 SqlCommand cm2=new SqlCommand(query2, conn);
+                cm2.Parameters.AddWithValue("@request", req);
+                cm2.Parameters.AddWithValue("@dat",dt );
                 cm2.ExecuteNonQuery();
                 //delete this from new request
                 string query3 = "delete from New_Degree_Req where ReqID=" + req;

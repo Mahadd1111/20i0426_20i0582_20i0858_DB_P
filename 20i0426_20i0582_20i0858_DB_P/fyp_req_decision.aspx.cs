@@ -21,7 +21,7 @@ public partial class fyp_req_decision : System.Web.UI.Page
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-ABASTNN\\SQLEXPRESS;Initial Catalog=OneStop;Integrated Security=True;MultipleActiveResultSets=true");
         conn.Open();
         string req = textbox_req.Value;
-        string date = Request.Form["textbox_date"];
+        DateTime dt= DateTime.Now;
         string status = textbox_status.Text;
         string reason = textbox_reason.Value;
         //First we need to Check that this is a Valid Pending Request 
@@ -45,22 +45,28 @@ public partial class fyp_req_decision : System.Web.UI.Page
                     string query3 = "select RollNo from Degree_Issue_Req where ReqID=" + req;
                     SqlCommand cm3 = new SqlCommand(query3, conn);
                     SqlDataReader reader1 = cm3.ExecuteReader();
-                    string rno = reader1["RollNo"].ToString();
-                    //Now checking his/her FYP Grade
-                    string query4 = "select grade from Student_Fyp where RollNo='" + rno + "'";
-                    SqlCommand cm4 = new SqlCommand(query4, conn);
-                    SqlDataReader reader2 = cm4.ExecuteReader();
-                    string grade = reader2["grade"].ToString();
-                    if (Equals(grade, "F"))
+                    if (reader1.Read())
                     {
-                        Response.Write("<script>alert('Student has got a failing grade, cannot forward confirmation');</script>");
-                    }
-                    else
-                    {
-                        //Save values into Database
-                        string query5 = "insert into Req_Tracking_Fyp values(" + req + ",'" + status + "','" + reason + "'" + date + "')";
-                        SqlCommand cm5 = new SqlCommand (query5, conn);
-                        cm5.ExecuteNonQuery();
+                        string rno = reader1["RollNo"].ToString();
+                        //Now checking his/her FYP Grade
+                        string query4 = "select grade from Student_Fyp where RollNo='" + rno + "'";
+                        SqlCommand cm4 = new SqlCommand(query4, conn);
+                        SqlDataReader reader2 = cm4.ExecuteReader();
+                        if (reader2.Read())
+                        {
+                            string grade = reader2["Grade"].ToString();
+                            if (Equals(grade, "F"))
+                            {
+                                Response.Write("<script>alert('Student has got a failing grade, cannot forward confirmation');</script>");
+                            }
+                            else
+                            {
+                                //Save values into Database
+                                string query5 = "insert into Req_Tracking_Fyp values(" + req + ",'" + status + "','" + reason + "',CONVERT(datetime,'" + dt + "',103))";
+                                SqlCommand cm5 = new SqlCommand(query5, conn);
+                                cm5.ExecuteNonQuery();
+                            }
+                        }
                     }
                 }
                 else if (Equals(status, "DO NOT PERMIT"))
@@ -81,7 +87,7 @@ public partial class fyp_req_decision : System.Web.UI.Page
                 cm9.ExecuteNonQuery();
                 if (Equals(status, "PERMIT"))
                 {
-                    string query10 = "update Req_Tracking_Fyp set Accept_date='" + date + "' where ReqID=" + req;
+                    string query10 = "update Req_Tracking_Fyp set Accept_date=CONVERT(datetime,'" + dt + "',103) where ReqID=" + req;
                     SqlCommand cm10=new SqlCommand (query10,conn);  
                     cm10.ExecuteNonQuery(); 
                 }

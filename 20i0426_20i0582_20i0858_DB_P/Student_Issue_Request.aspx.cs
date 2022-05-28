@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Globalization;
 
 public partial class Student_Issue_Request : System.Web.UI.Page
 {
@@ -19,7 +20,7 @@ public partial class Student_Issue_Request : System.Web.UI.Page
         SqlCommand cm;
         string rno = textbox_rno.Value;
         string degree = textbox_degree.Text;
-        string date = Request.Form["textbox_date"];
+        DateTime dt= DateTime.Now;
         string major = textbox_major.Text;
         string year = textbox_year.Value;
         //check if roll no exists in student
@@ -34,7 +35,7 @@ public partial class Student_Issue_Request : System.Web.UI.Page
         int checkNewReq=(int)cm2.ExecuteScalar();
         if (checkValidStudent > 0 && checkNewReq<=0) //rno is of a valid student and this request doesnt already exist
         { 
-            string query3 = "insert into Degree_Issue_Req values('" + rno + "','" + degree + "','" + date + "','" + major + "','" + year + "')";
+            string query3 = "insert into Degree_Issue_Req values('" + rno + "','" + degree + "',CONVERT(datetime,'" + dt + "',103),'" + major + "','" + year + "')";
             SqlCommand cm3;
             cm3 = new SqlCommand(query3, conn);
             cm3.ExecuteNonQuery();
@@ -45,8 +46,8 @@ public partial class Student_Issue_Request : System.Web.UI.Page
             if (reader.Read())
             {
                 string val1 = reader["ReqID"].ToString();
-                string val2=reader.GetString(1);
-                string query5="insert into New_Degree_Req values ("+val1+ ",'"+val2+"')";
+                DateTime val2 = reader.GetDateTime(1);
+                string query5="insert into New_Degree_Req values ("+val1+ ",CONVERT(datetime,'"+val2+"',103))";
                 SqlCommand cm5=new SqlCommand(query5, conn);
                 cm5.ExecuteNonQuery();
             }

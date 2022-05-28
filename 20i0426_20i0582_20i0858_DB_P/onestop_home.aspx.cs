@@ -15,4 +15,8 @@ public partial class _Default : System.Web.UI.Page
     {
         Response.Redirect("onestop_generate_token.aspx");
     }
+    protected void issueDegree_OnClick(object sender,EventArgs e)
+    {
+        Response.Redirect("onestop_issuedegree.aspx");
+    }
 }

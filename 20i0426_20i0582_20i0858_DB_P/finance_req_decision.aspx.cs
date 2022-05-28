@@ -21,7 +21,7 @@ public partial class finance_req_decision : System.Web.UI.Page
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-ABASTNN\\SQLEXPRESS;Initial Catalog=OneStop;Integrated Security=True;MultipleActiveResultSets=true");
         conn.Open();
         string req = textbox_req.Value;
-        string date = Request.Form["textbox_date"];
+        DateTime dt=DateTime.Now;
         string status = textbox_status.Text;
         string reason = textbox_reason.Value;
         //First we need to check if this is a valid pending request
@@ -58,7 +58,7 @@ public partial class finance_req_decision : System.Web.UI.Page
                         if (Equals(status, "PERMIT"))
                         {
                             //Save values into Database
-                            string query7 = "insert into Req_Tracking_Finance values(" + req + ",'" + status + "','" + reason + "'" + date + "')";
+                            string query7 = "insert into Req_Tracking_Finance values(" + req + ",'" + status + "','" + reason + "',CONVERT(datetime,'" + dt + "',103))";
                             SqlCommand cm7 = new SqlCommand(query7, conn);
                             cm7.ExecuteNonQuery();
                         }
@@ -92,7 +92,7 @@ public partial class finance_req_decision : System.Web.UI.Page
                 cm9.ExecuteNonQuery();
                 if (Equals(status, "PERMIT"))
                 {
-                    string query10 = "update Req_Tracking_Finance set Accept_date='" + date + "' where ReqID=" + req;
+                    string query10 = "update Req_Tracking_Finance set Accept_date=CONVERT(datetime,'" + dt + "',103) where ReqID=" + req;
                     SqlCommand cm10 = new SqlCommand(query10, conn);
                     cm10.ExecuteNonQuery();
                 }

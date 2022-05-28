@@ -57,7 +57,7 @@
 
                     </div>
                     <div class="c10">
-                        <button class="btn1" runat="server">ISSUE DEGREE</button>
+                        <button class="btn1" runat="server" onserverclick="issueDegree_OnClick">ISSUE DEGREE</button>
                     </div>
                 </div>
                 <div class="i6">
