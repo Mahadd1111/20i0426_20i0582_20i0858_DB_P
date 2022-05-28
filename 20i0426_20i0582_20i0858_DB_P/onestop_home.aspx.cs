@@ -11,4 +11,8 @@ public partial class _Default : System.Web.UI.Page
     {
 
     }
+    protected void generateToken_OnClick(object sender,EventArgs e)
+    {
+        Response.Redirect("onestop_generate_token.aspx");
+    }
 }

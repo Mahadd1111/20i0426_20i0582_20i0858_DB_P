@@ -11,4 +11,8 @@ public partial class _Default : System.Web.UI.Page
     {
 
     }
+    protected void handleRequest_OnClick(object sender, EventArgs e)
+    {
+        Response.Redirect("fyp_req_decision.aspx");
+    }
 }

@@ -29,7 +29,7 @@
 
                     </div>
                     <div class="c4">
-                        <button class="btn1" runat="server">GENERATE TOKEN</button>
+                        <button class="btn1" id="generateToken" runat="server" onserverclick="generateToken_OnClick">GENERATE TOKEN</button>
                     </div>
                 </div>
             </div>

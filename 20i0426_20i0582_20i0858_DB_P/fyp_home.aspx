@@ -30,7 +30,7 @@
                     <button class="btn1" runat="server">VIEW REQUESTS</button>
                 </div>
                 <div class="decision">
-                    <button class="btn1" runat="server">HANDLE REQUESTS</button>
+                    <button class="btn1" runat="server" onserverclick="handleRequest_OnClick">HANDLE REQUESTS</button>
                 </div>
             </div>
         </div>

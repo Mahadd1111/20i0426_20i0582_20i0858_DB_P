@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="options1">
-                <button class="btn1" runat="server">ISSUE DEGREE</button>
+                <button class="btn1" runat="server" id="issueDegree" onServerClick="issueDegree_OnClick">ISSUE DEGREE</button>
                 <div class="issuance">
 
                 </div>
@@ -29,7 +29,7 @@
                 <button class="btn2" runat="server">TRACK ACTIVITY</button>
             </div>
             <div class="options2">
-                <button class="btn1" runat="server">SEND COMPLAINT</button>
+                <button class="btn1" runat="server" id="issueComplaint" onserverclick="issueComplaint_OnClick">SEND COMPLAINT</button>
                 <div class="complaint">
 
                 </div>
