@@ -50,6 +50,10 @@ public partial class Student_Issue_Request : System.Web.UI.Page
                 string query5="insert into New_Degree_Req values ("+val1+ ",CONVERT(datetime,'"+val2+"',103))";
                 SqlCommand cm5=new SqlCommand(query5, conn);
                 cm5.ExecuteNonQuery();
+                //Now lets start getting department statistics on this request
+                string query6 = "insert into Department_Statistics values(" + val1 + ",NULL,NULL,NULL,NULL)";
+                SqlCommand cm6=new SqlCommand(query6, conn);
+                cm6.ExecuteNonQuery();
             }
             Response.Write("<script>alert('Request Sent Successfully!');</script>");
         }

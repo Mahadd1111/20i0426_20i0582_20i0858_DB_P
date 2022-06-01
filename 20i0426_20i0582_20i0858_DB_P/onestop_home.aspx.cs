@@ -19,4 +19,24 @@ public partial class _Default : System.Web.UI.Page
     {
         Response.Redirect("onestop_issuedegree.aspx");
     }
+    protected void go_back(object sender,EventArgs e)
+    {
+        Response.Redirect("Home_Page.aspx");
+    }
+    protected void new_requests(object sender, EventArgs e)
+    {
+        Response.Redirect("Onestop_Report_NewReq.aspx");
+    }
+    protected void all_requests(object sender, EventArgs e)
+    {
+        Response.Redirect("Onestop_Report_AllReq.aspx");
+    }
+    protected void issue_transcript(object sender, EventArgs e)
+    {
+        Response.Redirect("");
+    }
+    protected void request_tracking(object sender, EventArgs e)
+    {
+        Response.Redirect("Onestop_Report_Tracking.aspx");
+    }
 }

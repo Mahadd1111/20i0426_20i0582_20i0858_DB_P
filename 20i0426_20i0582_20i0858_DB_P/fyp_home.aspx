@@ -24,14 +24,17 @@
             </div>
             <div class="functionality">
                 <div class="viewfyp">
-                    <button class="btn1" runat="server">FYP RESULTS DATA</button>
+                    <button class="btn1" runat="server" onserverclick="fyp_results">FYP RESULTS DATA</button>
                 </div>
                 <div class="viewreq">
-                    <button class="btn1" runat="server">VIEW REQUESTS</button>
+                    <button class="btn1" runat="server" onserverclick="view_requests">VIEW REQUESTS</button>
                 </div>
                 <div class="decision">
                     <button class="btn1" runat="server" onserverclick="handleRequest_OnClick">HANDLE REQUESTS</button>
                 </div>
+            </div>
+            <div class="bottom">
+                <button class="btn3" runat="server" onserverclick="go_back">Log Out</button>
             </div>
         </div>
     </form>

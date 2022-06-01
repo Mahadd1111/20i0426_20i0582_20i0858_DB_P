@@ -21,7 +21,7 @@
                         
                     </div>
                     <div class="c2">
-                        <button class="btn1" runat="server">NEW REQUESTS</button>
+                        <button class="btn1" runat="server" onserverclick="new_requests">NEW REQUESTS</button>
                     </div>
                 </div>
                 <div class="i2">
@@ -39,7 +39,7 @@
 
                     </div>
                     <div class="c6">
-                        <button class="btn1" runat="server">VIEW ALL REQUESTS</button>
+                        <button class="btn1" runat="server" onserverclick="all_requests">VIEW ALL REQUESTS</button>
                     </div>
                 </div>
                 <div class="i4">
@@ -47,7 +47,7 @@
 
                     </div>
                     <div class="c8">
-                        <button class="btn1" runat="server">REQUEST TRACKING</button>
+                        <button class="btn1" runat="server" onserverclick="request_tracking">REQUEST TRACKING</button>
                     </div>
                 </div>
             </div>
@@ -65,9 +65,12 @@
 
                     </div>
                     <div class="c12">
-                        <button class="btn1" runat="server">ISSUE TRANSCRIPT</button>
+                        <button class="btn1" runat="server" onserverclick="issue_transcript">ISSUE TRANSCRIPT</button>
                     </div>
                 </div>
+            </div>
+             <div class="bottom">
+                <button class="btn3" runat="server" onserverclick="go_back">Log Out</button>
             </div>
         </div>
     </form>

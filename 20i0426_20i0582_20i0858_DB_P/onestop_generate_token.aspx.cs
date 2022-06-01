@@ -37,6 +37,17 @@ public partial class onestop_generate_token : System.Web.UI.Page
                 string query3 = "delete from New_Degree_Req where ReqID=" + req;
                 SqlCommand cm3=new SqlCommand(query3, conn);
                 cm3.ExecuteNonQuery();
+                //set initial values for tracking of this pending request
+                string query4 = "insert into Req_Tracking_Fyp values(" + req + ",'DO NOT PERMIT','UNRESOLVED',NULL)";
+                string query5= "insert into Req_Tracking_Finance values(" + req + ",'DO NOT PERMIT','UNRESOLVED',NULL)";
+                SqlCommand cm4 = new SqlCommand(query4, conn);
+                SqlCommand cm5 = new SqlCommand(query5, conn);
+                cm4.ExecuteNonQuery();
+                cm5.ExecuteNonQuery();
+                //Lets set time for when token was generated for department_statistics table
+                string query6 = "update Department_Statistics set token_time=Convert(datetime,'" + dt + "',103) where ReqID="+req;
+                SqlCommand cm6=new SqlCommand(query6, conn);    
+                cm6.ExecuteNonQuery();
             }
             else
             {

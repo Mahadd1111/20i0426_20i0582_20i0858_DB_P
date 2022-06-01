@@ -25,17 +25,20 @@
             </div>
             <div class="functionality">
                 <div class="viewdata">
-                    <button class="btn1" runat="server">STUDENT'S OUTSTANDING FEES</button>
+                    <button class="btn1" runat="server" onserverclick="outstanding_fees">STUDENT'S OUTSTANDING FEES</button>
                 </div>
                 <div class="viewfees">
-                    <button class="btn1" runat="server">PAID DEGREE ISSUANCE FEES</button>
+                    <button class="btn1" runat="server" onserverclick="issuance_fees">PAID DEGREE ISSUANCE FEES</button>
                 </div>
                 <div class="viewreq">
-                    <button class="btn1" runat="server">VIEW REQUESTS</button>
+                    <button class="btn1" runat="server" onserverclick="view_requests">VIEW REQUESTS</button>
                 </div>
                 <div class="decision">
                     <button class="btn1" runat="server" onserverclick="handleRequest_OnClick">HANDLE REQUESTS</button>
                 </div>
+            </div>
+             <div class="bottom">
+                <button class="btn3" runat="server" onserverclick="go_back">Log Out</button>
             </div>
         </div>
     </form>

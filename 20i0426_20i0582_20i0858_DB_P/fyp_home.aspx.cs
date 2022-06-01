@@ -15,4 +15,16 @@ public partial class _Default : System.Web.UI.Page
     {
         Response.Redirect("fyp_req_decision.aspx");
     }
+    protected void go_back(object sender,EventArgs e)
+    {
+        Response.Redirect("Home_Page.aspx");
+    }
+    protected void view_requests(object sender,EventArgs e)
+    {
+        Response.Redirect("Fyp_Report_Pending.aspx");
+    }
+    protected void fyp_results(object sender, EventArgs e)
+    {
+        Response.Redirect("Fyp_Report_Results.aspx");
+    }
 }

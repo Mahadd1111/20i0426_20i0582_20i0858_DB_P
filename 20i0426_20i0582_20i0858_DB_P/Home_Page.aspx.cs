@@ -112,7 +112,7 @@ public partial class Home_Page : System.Web.UI.Page
             if (result > 0)
             {
                 //Login correct
-                //Response.Redirect("Director_home.aspx");
+                Response.Redirect("Director_Home.aspx");
                 Response.Write("<script>alert('Login Successful!');</script>");
 
             }

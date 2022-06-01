@@ -60,11 +60,12 @@ public partial class fyp_req_decision : System.Web.UI.Page
                                 Response.Write("<script>alert('Student has got a failing grade, cannot forward confirmation');</script>");
                             }
                             else
-                            {
-                                //Save values into Database
-                                string query5 = "insert into Req_Tracking_Fyp values(" + req + ",'" + status + "','" + reason + "',CONVERT(datetime,'" + dt + "',103))";
+                            {string query5 = "insert into Req_Tracking_Fyp values(" + req + ",'" + status + "','" + reason + "',CONVERT(datetime,'" + dt + "',103))";
                                 SqlCommand cm5 = new SqlCommand(query5, conn);
                                 cm5.ExecuteNonQuery();
+                                string query12 = "update Department_Statistics set fyp_resolved=Convert(datetime,'" + dt + "',103) where ReqID="+req;
+                                SqlCommand cm12 = new SqlCommand(query12, conn);
+                                cm12.ExecuteNonQuery();
                             }
                         }
                     }
@@ -89,7 +90,10 @@ public partial class fyp_req_decision : System.Web.UI.Page
                 {
                     string query10 = "update Req_Tracking_Fyp set Accept_date=CONVERT(datetime,'" + dt + "',103) where ReqID=" + req;
                     SqlCommand cm10=new SqlCommand (query10,conn);  
-                    cm10.ExecuteNonQuery(); 
+                    cm10.ExecuteNonQuery();
+                    string query11 = "update Department_Statistics set fyp_resolved=Convert(datetime,'" + dt + "',103) where ReqID=" + req;
+                    SqlCommand cm11 = new SqlCommand(query11, conn);
+                    cm11.ExecuteNonQuery();
                 }
                 Response.Write("<script>alert('Successfully Updated!');</script>");
             }

@@ -52,6 +52,7 @@ public partial class onestop_issuedegree : System.Web.UI.Page
                     string query6="delete from Pending_Degree_Req where ReqID="+req;
                     SqlCommand cm6 = new SqlCommand(query6, conn);
                     cm6.ExecuteNonQuery();
+                    string query7 = "update Department_statistics set issued_time=Convert(datetime,'" + dt + "',103) where ReqID=" + req;
                     Response.Write("<script>alert('Successfully Issued Degree, Transcript can be issued for this Student');</script>");
                 }
                 else

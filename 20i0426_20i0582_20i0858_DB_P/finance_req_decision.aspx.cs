@@ -61,6 +61,9 @@ public partial class finance_req_decision : System.Web.UI.Page
                             string query7 = "insert into Req_Tracking_Finance values(" + req + ",'" + status + "','" + reason + "',CONVERT(datetime,'" + dt + "',103))";
                             SqlCommand cm7 = new SqlCommand(query7, conn);
                             cm7.ExecuteNonQuery();
+                            string query12 = "update Department_Statistics set finance_resolved=Convert(datetime,'" + dt + "',103) where ReqID="+req;
+                            SqlCommand cm12=new SqlCommand(query12, conn);
+                            cm12.ExecuteNonQuery();
                         }
                         else if (Equals(status, "DO NOT PERMIT"))
                         {
@@ -95,6 +98,9 @@ public partial class finance_req_decision : System.Web.UI.Page
                     string query10 = "update Req_Tracking_Finance set Accept_date=CONVERT(datetime,'" + dt + "',103) where ReqID=" + req;
                     SqlCommand cm10 = new SqlCommand(query10, conn);
                     cm10.ExecuteNonQuery();
+                    string query13 = "update Department_Statistics set finance_resolved=Convert(datetime,'" + dt + "',103) where ReqID="+req;
+                    SqlCommand cm13 = new SqlCommand(query13, conn);
+                    cm13.ExecuteNonQuery();
                 }
                 Response.Write("<script>alert('Successfully Updated!');</script>");
             }

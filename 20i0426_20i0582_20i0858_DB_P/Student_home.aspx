@@ -26,7 +26,7 @@
                 <div class="tracking">
 
                 </div>
-                <button class="btn2" runat="server">TRACK ACTIVITY</button>
+                <button class="btn2" runat="server" onserverclick="track_activity">TRACK ACTIVITY</button>
             </div>
             <div class="options2">
                 <button class="btn1" runat="server" id="issueComplaint" onserverclick="issueComplaint_OnClick">SEND COMPLAINT</button>
@@ -37,6 +37,9 @@
 
                 </div>
                 <button class="btn2" runat="server">GET TRANSCRIPT</button>
+            </div>
+            <div class="bottom">
+                <button class="btn3" runat="server" onserverclick="go_back">Log Out</button>
             </div>
         </div>
     </form>
