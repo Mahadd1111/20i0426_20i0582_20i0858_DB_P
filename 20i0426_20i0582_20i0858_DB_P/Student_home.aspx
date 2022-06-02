@@ -36,7 +36,7 @@
                 <div class="transcript">
 
                 </div>
-                <button class="btn2" runat="server">GET TRANSCRIPT</button>
+                <button class="btn2" runat="server" onserverclick="transcript">GET TRANSCRIPT</button>
             </div>
             <div class="bottom">
                 <button class="btn3" runat="server" onserverclick="go_back">Log Out</button>

@@ -28,4 +28,8 @@ public partial class _Default : System.Web.UI.Page
     {
         Response.Redirect("Student_Report_Track.aspx");
     }
+    protected void transcript(object sender,EventArgs e)
+    {
+        Response.Redirect("Student_Report_Transcript.aspx");
+    }
 }
