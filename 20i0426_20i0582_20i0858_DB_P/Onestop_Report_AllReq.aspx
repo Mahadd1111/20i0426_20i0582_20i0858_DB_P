@@ -77,9 +77,31 @@
         <div class="main">
              <div class="report" style="height:600px;">
                 <h2>NEW REQUESTS</h2>
-                <asp:GridView ID="GridView1" runat="server" CssClass="grid1" AutoGenerateColumns="False" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="5px" CellPadding="7" CellSpacing="2" DataKeyNames="ReqID" DataSourceID="new_requests" GridLines="None" Width="400px">
+                <asp:GridView ID="GridView1" runat="server" CssClass="grid1" AutoGenerateColumns="False" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="5px" CellPadding="7" CellSpacing="2" DataKeyNames="ReqID" DataSourceID="new_requests2" GridLines="None" Width="400px">
                     <Columns>
-                        <asp:BoundField DataField="ReqID" HeaderText="ReqID" ReadOnly="True" SortExpression="ReqID" />
+                        <asp:BoundField DataField="RollNo" HeaderText="RollNo" SortExpression="RollNo" />
+                        <asp:BoundField DataField="ReqID" HeaderText="ReqID" SortExpression="ReqID" ReadOnly="True" />
+                        <asp:BoundField DataField="Reg_date" HeaderText="Reg_date" SortExpression="Reg_date" />
+                    </Columns>
+                    <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
+                    <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#E7E7FF" />
+                    <PagerStyle BackColor="#C6C3C6" ForeColor="Black" HorizontalAlign="Right" />
+                    <RowStyle BackColor="#DEDFDE" ForeColor="Black" />
+                    <SelectedRowStyle BackColor="#9471DE" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                    <SortedAscendingHeaderStyle BackColor="#594B9C" />
+                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                    <SortedDescendingHeaderStyle BackColor="#33276A" />
+                </asp:GridView>
+                 <asp:SqlDataSource ID="new_requests2" runat="server" ConnectionString="<%$ ConnectionStrings:OneStopConnectionString %>" SelectCommand="Select b.RollNo,a.ReqID,a.Reg_date from New_Degree_Req a inner join Degree_Issue_Req b on a.ReqID=b.ReqID"></asp:SqlDataSource>
+                 <asp:SqlDataSource ID="new_requests" runat="server" ConnectionString="<%$ ConnectionStrings:OneStopConnectionString %>" SelectCommand="SELECT * FROM [New_Degree_Req]"></asp:SqlDataSource>
+            </div>
+         <div class="report" style="height:600px;">
+                <h2>PENDING REQUESTS</h2>
+                <asp:GridView ID="GridView2" runat="server" CssClass="grid1" AutoGenerateColumns="False" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="5px" CellPadding="7" CellSpacing="2" DataKeyNames="ReqID" DataSourceID="pending_req2" GridLines="None" Width="400px">
+                    <Columns>
+                        <asp:BoundField DataField="RollNo" HeaderText="RollNo" SortExpression="RollNo" />
+                        <asp:BoundField DataField="ReqID" HeaderText="ReqID" SortExpression="ReqID" ReadOnly="True" />
                         <asp:BoundField DataField="Reg_Date" HeaderText="Reg_Date" SortExpression="Reg_Date" />
                     </Columns>
                     <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
@@ -92,33 +114,16 @@
                     <SortedDescendingCellStyle BackColor="#CAC9C9" />
                     <SortedDescendingHeaderStyle BackColor="#33276A" />
                 </asp:GridView>
-                 <asp:SqlDataSource ID="new_requests" runat="server" ConnectionString="<%$ ConnectionStrings:OneStopConnectionString %>" SelectCommand="SELECT * FROM [New_Degree_Req]"></asp:SqlDataSource>
-            </div>
-         <div class="report" style="height:600px;">
-                <h2>PENDING REQUESTS</h2>
-                <asp:GridView ID="GridView2" runat="server" CssClass="grid1" AutoGenerateColumns="False" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="5px" CellPadding="7" CellSpacing="2" DataKeyNames="ReqID" DataSourceID="pending_req" GridLines="None" Width="400px">
-                    <Columns>
-                        <asp:BoundField DataField="ReqID" HeaderText="ReqID" ReadOnly="True" SortExpression="ReqID" />
-                        <asp:BoundField DataField="Reg_date" HeaderText="Reg_date" SortExpression="Reg_date" />
-                    </Columns>
-                    <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
-                    <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#E7E7FF" />
-                    <PagerStyle BackColor="#C6C3C6" ForeColor="Black" HorizontalAlign="Right" />
-                    <RowStyle BackColor="#DEDFDE" ForeColor="Black" />
-                    <SelectedRowStyle BackColor="#9471DE" Font-Bold="True" ForeColor="White" />
-                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                    <SortedAscendingHeaderStyle BackColor="#594B9C" />
-                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                    <SortedDescendingHeaderStyle BackColor="#33276A" />
-                </asp:GridView>
+                <asp:SqlDataSource ID="pending_req2" runat="server" ConnectionString="<%$ ConnectionStrings:OneStopConnectionString %>" SelectCommand="Select b.RollNo,a.ReqID,a.Reg_Date from Pending_Degree_Req a inner join Degree_Issue_Req b on a.ReqID=b.ReqID"></asp:SqlDataSource>
                 <asp:SqlDataSource ID="pending_req" runat="server" ConnectionString="<%$ ConnectionStrings:OneStopConnectionString %>" SelectCommand="SELECT * FROM [Pending_Degree_Req]"></asp:SqlDataSource>
             </div>
             <div class="report" style="height:600px;">
                 <h2>PROCESSED REQUESTS</h2>
-                <asp:GridView ID="GridView3" runat="server" CssClass="grid1" AutoGenerateColumns="False" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="5px" CellPadding="7" CellSpacing="2" DataKeyNames="ReqID" DataSourceID="processed_req" GridLines="None" Width="400px">
+                <asp:GridView ID="GridView3" runat="server" CssClass="grid1" AutoGenerateColumns="False" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="5px" CellPadding="7" CellSpacing="2" DataKeyNames="ReqID" DataSourceID="Processed_req2" GridLines="None" Width="400px">
                     <Columns>
-                        <asp:BoundField DataField="ReqID" HeaderText="ReqID" ReadOnly="True" SortExpression="ReqID" />
-                        <asp:BoundField DataField="Reg_date" HeaderText="Reg_date" SortExpression="Reg_date" />
+                        <asp:BoundField DataField="RollNo" HeaderText="RollNo" SortExpression="RollNo" />
+                        <asp:BoundField DataField="ReqID" HeaderText="ReqID" SortExpression="ReqID" ReadOnly="True" />
+                        <asp:BoundField DataField="Reg_Date" HeaderText="Reg_Date" SortExpression="Reg_Date" />
                     </Columns>
                     <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
                     <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#E7E7FF" />
@@ -130,6 +135,7 @@
                     <SortedDescendingCellStyle BackColor="#CAC9C9" />
                     <SortedDescendingHeaderStyle BackColor="#33276A" />
                 </asp:GridView>
+                <asp:SqlDataSource ID="Processed_req2" runat="server" ConnectionString="<%$ ConnectionStrings:OneStopConnectionString %>" SelectCommand="Select b.RollNo,a.ReqID,a.Reg_Date from Processed_Degree_Req a inner join Degree_Issue_Req b on a.ReqID=b.ReqID"></asp:SqlDataSource>
                 <asp:SqlDataSource ID="processed_req" runat="server" ConnectionString="<%$ ConnectionStrings:OneStopConnectionString %>" SelectCommand="SELECT * FROM [Processed_Degree_Req]"></asp:SqlDataSource>
             </div>
         </div>

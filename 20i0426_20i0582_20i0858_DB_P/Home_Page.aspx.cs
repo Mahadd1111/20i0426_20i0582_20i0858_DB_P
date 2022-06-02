@@ -104,7 +104,7 @@ public partial class Home_Page : System.Web.UI.Page
         }
         else if (String.Equals(utype, "Director"))
         {
-            string query = "Select count(*) from Login_Finance where username like @u and password like @p";
+            string query = "Select count(*) from Login_Director where username like @u and password like @p";
             cm = new SqlCommand(query, conn);
             cm.Parameters.AddWithValue("@u", un);
             cm.Parameters.AddWithValue("@p", pw);

@@ -12,6 +12,10 @@ public partial class Student_Complaint : System.Web.UI.Page
     {
         
     }
+    protected void goback_OnClick(object sender,EventArgs e)
+    {
+        Response.Redirect("Student_Home.aspx");
+    }
     protected void submitComplaint_OnClick(object sender,EventArgs e)
     {
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-ABASTNN\\SQLEXPRESS;Initial Catalog=OneStop;Integrated Security=True");

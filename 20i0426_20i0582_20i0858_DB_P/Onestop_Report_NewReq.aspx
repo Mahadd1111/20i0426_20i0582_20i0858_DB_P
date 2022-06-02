@@ -69,10 +69,14 @@
             <h1>VIEWING NEW REQUESTS</h1>
         </div>
         <div class="report" style="height:600px;">
-                <asp:GridView ID="GridView1" runat="server" CssClass="grid1" AutoGenerateColumns="False" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="5px" CellPadding="7" CellSpacing="2" DataKeyNames="ReqID" DataSourceID="New_Requests" GridLines="None" Width="700px">
+                <asp:GridView ID="GridView1" runat="server" CssClass="grid1" AutoGenerateColumns="False" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="5px" CellPadding="7" CellSpacing="2" DataKeyNames="ReqID" DataSourceID="New_Req2" GridLines="None" Width="700px">
                     <Columns>
                         <asp:BoundField DataField="ReqID" HeaderText="ReqID" ReadOnly="True" SortExpression="ReqID" />
-                        <asp:BoundField DataField="Reg_Date" HeaderText="Reg_Date" SortExpression="Reg_Date" />
+                        <asp:BoundField DataField="Reg_date" HeaderText="Reg_date" SortExpression="Reg_date" />
+                        <asp:BoundField DataField="RollNo" HeaderText="RollNo" SortExpression="RollNo" />
+                        <asp:BoundField DataField="Degree_type" HeaderText="Degree_type" SortExpression="Degree_type" />
+                        <asp:BoundField DataField="Major" HeaderText="Major" SortExpression="Major" />
+                        <asp:BoundField DataField="Year" HeaderText="Year" SortExpression="Year" />
                     </Columns>
                     <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
                     <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#E7E7FF" />
@@ -84,6 +88,7 @@
                     <SortedDescendingCellStyle BackColor="#CAC9C9" />
                     <SortedDescendingHeaderStyle BackColor="#33276A" />
                 </asp:GridView>
+                <asp:SqlDataSource ID="New_Req2" runat="server" ConnectionString="<%$ ConnectionStrings:OneStopConnectionString %>" SelectCommand="Select a.ReqID,a.Reg_date,b.RollNo,b.Degree_type,b.Major,b.Year from New_Degree_Req a inner join Degree_Issue_Req b on a.ReqID=b.ReqID"></asp:SqlDataSource>
                 <asp:SqlDataSource ID="New_Requests" runat="server" ConnectionString="<%$ ConnectionStrings:OneStopConnectionString %>" SelectCommand="SELECT * FROM [New_Degree_Req]"></asp:SqlDataSource>
         </div>
         <div class="bottom">

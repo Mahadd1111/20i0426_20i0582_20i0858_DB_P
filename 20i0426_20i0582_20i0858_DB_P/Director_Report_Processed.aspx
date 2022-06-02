@@ -73,6 +73,10 @@
                     <Columns>
                         <asp:BoundField DataField="ReqID" HeaderText="ReqID" ReadOnly="True" SortExpression="ReqID" />
                         <asp:BoundField DataField="Reg_date" HeaderText="Reg_date" SortExpression="Reg_date" />
+                        <asp:BoundField DataField="RollNo" HeaderText="RollNo" SortExpression="RollNo" />
+                        <asp:BoundField DataField="Major" HeaderText="Major" SortExpression="Major" />
+                        <asp:BoundField DataField="Degree_type" HeaderText="Degree_type" SortExpression="Degree_type" />
+                        <asp:BoundField DataField="Year" HeaderText="Year" SortExpression="Year" />
                     </Columns>
                     <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
                     <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#E7E7FF" />
@@ -84,7 +88,7 @@
                     <SortedDescendingCellStyle BackColor="#CAC9C9" />
                     <SortedDescendingHeaderStyle BackColor="#33276A" />
                 </asp:GridView>
-                <asp:SqlDataSource ID="Processed_Request" runat="server" ConnectionString="<%$ ConnectionStrings:OneStopConnectionString %>" SelectCommand="select * from Processed_Degree_Req"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="Processed_Request" runat="server" ConnectionString="<%$ ConnectionStrings:OneStopConnectionString %>" SelectCommand="select a.ReqID,a.Reg_date,b.RollNo,b.Major,b.Degree_type,b.Year from Processed_Degree_Req a inner join Degree_Issue_Req b on a.ReqID=b.ReqID "></asp:SqlDataSource>
         </div>
         <div class="bottom">
             <button class="btn1" runat="server" onserverclick="btn_OnClick">GO BACK</button>

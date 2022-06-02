@@ -33,7 +33,7 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void issue_transcript(object sender, EventArgs e)
     {
-        Response.Redirect("");
+        Response.Redirect("Onestop_IssueTranscript.aspx");
     }
     protected void request_tracking(object sender, EventArgs e)
     {

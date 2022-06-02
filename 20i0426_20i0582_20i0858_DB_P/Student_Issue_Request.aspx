@@ -72,6 +72,7 @@
                 </div>
             </div>
             <div class="button">
+                <input type="submit" runat="server"  id="goback" value="Go Back" onServerClick="goback_OnClick"/>
                 <input type="submit" runat="server"  id="submitRequest" onServerClick="submitIssue_OnClick"/>
             </div>
         </div>

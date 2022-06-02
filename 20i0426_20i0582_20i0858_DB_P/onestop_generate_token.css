@@ -167,3 +167,12 @@ border-color: white;
 form .button input:hover {
     background: linear-gradient(-135deg, rgba(85,0,138,1) 31%, rgba(255,0,65,1) 84%);
 }
+
+.button {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}

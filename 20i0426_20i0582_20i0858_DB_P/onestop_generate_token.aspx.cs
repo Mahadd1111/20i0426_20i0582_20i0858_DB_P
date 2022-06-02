@@ -12,6 +12,10 @@ public partial class onestop_generate_token : System.Web.UI.Page
     {
 
     }
+    protected void goback_OnClick(object sender,EventArgs e)
+    {
+        Response.Redirect("onestop_home.aspx");
+    }
     protected void submitToken_OnClick(object sender, EventArgs e)
     {
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-ABASTNN\\SQLEXPRESS;Initial Catalog=OneStop;Integrated Security=True;MultipleActiveResultSets=true");

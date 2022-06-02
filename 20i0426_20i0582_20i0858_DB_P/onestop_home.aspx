@@ -12,8 +12,13 @@
     <form id="form1" runat="server">
         <div class="page">
             <div class="header">
-                <h1>ADMIN DASHBOARD</h1>
-                <h3>FAST-NUCES ISLAMABAD</h3>
+                <div class="left">
+                    <h1>ADMIN DASHBOARD</h1>
+                    <h3>FAST-NUCES ISLAMABAD</h3>
+                </div>
+                <div class="right">
+                <button class="btn3" runat="server" onserverclick="go_back">Log Out</button>
+                </div>
             </div>
             <div class="f1">
                 <div class="i1">
@@ -68,9 +73,6 @@
                         <button class="btn1" runat="server" onserverclick="issue_transcript">ISSUE TRANSCRIPT</button>
                     </div>
                 </div>
-            </div>
-             <div class="bottom">
-                <button class="btn3" runat="server" onserverclick="go_back">Log Out</button>
             </div>
         </div>
     </form>

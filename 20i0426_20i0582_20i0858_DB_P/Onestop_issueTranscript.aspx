@@ -36,6 +36,7 @@
                 </div>
             </div>
             <div class="button">
+                <input type="submit" runat="server"  id="submit1" value="Go Back" onserverclick="goback_OnClick"/>
                 <input type="submit" runat="server"  id="submitToken" onserverclick="submit_token"/>
             </div>
         </div>
